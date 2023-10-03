@@ -4,6 +4,8 @@
  */
 package br.com.bello_academico.entrega01;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author 819226747
@@ -33,8 +35,9 @@ public class LoginTela extends javax.swing.JFrame {
         LoginTextField = new javax.swing.JTextField();
         SenhaPasswordField = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
-        LoginButton = new javax.swing.JButton();
+        FazerLoginButton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        CancelarLoginButton = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
 
@@ -43,13 +46,15 @@ public class LoginTela extends javax.swing.JFrame {
         jTextField4.setText("jTextField4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        LoginTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Digite seu login"));
+        LoginTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Digite seu usuário"));
         LoginTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LoginTextFieldActionPerformed(evt);
             }
         });
+        getContentPane().add(LoginTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 120, 38));
 
         SenhaPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder("Digite sua senha"));
         SenhaPasswordField.addActionListener(new java.awt.event.ActionListener() {
@@ -57,55 +62,34 @@ public class LoginTela extends javax.swing.JFrame {
                 SenhaPasswordFieldActionPerformed(evt);
             }
         });
+        getContentPane().add(SenhaPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 120, -1));
 
         jLabel1.setText("      FireBook");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 74, 35));
 
-        LoginButton.setText("Login");
-        LoginButton.addActionListener(new java.awt.event.ActionListener() {
+        FazerLoginButton.setText("Login");
+        FazerLoginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginButtonActionPerformed(evt);
+                FazerLoginButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(FazerLoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, -1, -1));
 
         jButton1.setText("Esqueceu a senha");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(271, 271, 271)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(263, 263, 263)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(LoginTextField)
-                                .addComponent(SenhaPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton1)
-                                    .addComponent(LoginButton))))))
-                .addContainerGap(238, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68)
-                .addComponent(LoginTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(SenhaPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LoginButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
-                .addContainerGap(49, Short.MAX_VALUE))
-        );
+        CancelarLoginButton.setText("cancelar");
+        CancelarLoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelarLoginButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CancelarLoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, 80, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -118,9 +102,31 @@ public class LoginTela extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SenhaPasswordFieldActionPerformed
 
-    private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
+    private void FazerLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FazerLoginButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_LoginButtonActionPerformed
+        //passo 1: login
+          String login = LoginTextField.getText();
+        //passo 2: senha
+          String senha = new String(SenhaPasswordField.getPassword()); 
+        //passo 3: verificar
+        if (login.equals("admin") && senha.equals("admin")){
+        //passo 4: entrou
+         JOptionPane.showMessageDialog(null, "bem vindo!");
+                }
+        else{
+        //passo 5: errou
+                JOptionPane.showMessageDialog(null, "senha e/ou login errados");
+        }
+        
+    }//GEN-LAST:event_FazerLoginButtonActionPerformed
+
+    private void CancelarLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarLoginButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CancelarLoginButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,7 +164,8 @@ public class LoginTela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton LoginButton;
+    private javax.swing.JButton CancelarLoginButton;
+    private javax.swing.JButton FazerLoginButton;
     private javax.swing.JTextField LoginTextField;
     private javax.swing.JPasswordField SenhaPasswordField;
     private javax.swing.JButton jButton1;
