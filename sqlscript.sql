@@ -14,6 +14,8 @@ descricao VARCHAR(10) NOT NULL
 
 /*CREATE TABLE tb_usuario(
 id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+login VARCHAR(20) NOT NULL UNIQUE,
+senha VARCHAR(20) NOT NULL,
 nome VARCHAR(30) NOT NULL,
 tipo_usuario INT NOT NULL,
 CONSTRAINT FK_tipo_usuario FOREIGN KEY (tipo_usuario) REFERENCES tb_tipo_usuario(tipo_usuario) ON DELETE CASCADE ON UPDATE CASCADE 
