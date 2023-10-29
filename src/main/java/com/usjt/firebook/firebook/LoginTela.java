@@ -1,5 +1,7 @@
 package com.usjt.firebook.firebook;
 
+import javax.swing.JOptionPane;
+
 public class LoginTela extends javax.swing.JFrame {
 
     /**
@@ -100,15 +102,21 @@ public class LoginTela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void entrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarButtonActionPerformed
-        // TODO add your handling code here:
-        String login = usuarioTextField.toString();
-        String senha = senhaPasswordField.toString();
-        System.out.println(login + " " + senha);
-        if(UsuarioDAO.validaLogin(login, senha)){
+        String login = usuarioTextField.getText();
+        String senha = new String (senhaPasswordField.getPassword());
+        //System.out.println(login + " " + senha);
+        if (login.equals("admin") && senha.equals("admin")){
             NovaTela novaTela = new NovaTela();
             novaTela.setVisible(true);
             this.dispose();
         }
+        else
+            JOptionPane.showMessageDialog(null, "Usuário inválido");
+        //if(UsuarioDAO.validaLogin(login, senha)){
+        //    NovaTela novaTela = new NovaTela();
+        //    novaTela.setVisible(true);
+        //    this.dispose();
+        //}
     }//GEN-LAST:event_entrarButtonActionPerformed
 
     /**

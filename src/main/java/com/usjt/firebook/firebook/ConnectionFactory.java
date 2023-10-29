@@ -8,7 +8,7 @@ public class ConnectionFactory {
     private static final String port = "12853";
     private static final String user = "avnadmin";
     private static final String password = "AVNS_5h1pGTmZzoh4H4BsjVK";
-    private static final String db = "defaultdb";
+    private static final String db = "db_firebook";
     
     public static Connection conectar() {
         try{

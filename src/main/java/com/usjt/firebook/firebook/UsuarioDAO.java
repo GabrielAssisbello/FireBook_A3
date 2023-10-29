@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class UsuarioDAO {
     public void cadastrar(Usuario u) throws Exception {
-        String sql = "INSERT INTO tb_pessoa(nome, login, senha) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO tb_usuario(nome, login, senha) VALUES (?, ?, ?)";
         var fabricaDeConexoes = new ConnectionFactory();
         var conexao = fabricaDeConexoes.conectar();
         PreparedStatement ps = conexao.prepareStatement(sql);
@@ -20,7 +20,7 @@ public class UsuarioDAO {
     
     public void atualizar(Usuario u) throws Exception{
         String sql = 
-        "UPDATE tb_pessoa SET nome = ?, login = ?, senha = ?, tipo = ? WHERE id_usuario = ?;";
+        "UPDATE tb_usuario SET nome = ?, login = ?, senha = ?, tipo = ? WHERE id_usuario = ?;";
         try(
             var conexao = ConnectionFactory.conectar();
             var ps = conexao.prepareStatement(sql);
@@ -35,7 +35,7 @@ public class UsuarioDAO {
     }
     
     public void deletar(Usuario u) throws Exception{
-        String sql = "DELETE FROM tb_pessoa WHERE id_usuario = ?";
+        String sql = "DELETE FROM tb_usuario WHERE id_usuario = ?";
         try(
             var conexao = new ConnectionFactory().conectar();
             var ps = conexao.prepareStatement(sql);
