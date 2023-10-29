@@ -2,6 +2,7 @@ package com.usjt.firebook.firebook;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class UsuarioDAO {
     public void cadastrar(Usuario u) throws Exception {
@@ -44,11 +45,11 @@ public class UsuarioDAO {
         }
     }
 
-    public boolean validaLogin(String login, String senha) throws Exception {
+    public static boolean validaLogin(String login, String senha){
         String sql = "SELECT senha from tb_usuario WHERE login = ?";
         try(
-            var conexao = new ConnectionFactory().conectar();
-            var ps = conexao.prepareStatement(sql);
+                var conexao = new ConnectionFactory().conectar();
+                var ps = conexao.prepareStatement(sql);
         ){
             ps.setString(1, login);
             ResultSet rs = ps.executeQuery();
@@ -71,6 +72,9 @@ public class UsuarioDAO {
                 //usuario não encontrado
                 return false;
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 }

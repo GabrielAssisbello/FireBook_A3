@@ -110,7 +110,13 @@ public class LoginTela extends javax.swing.JFrame {
 
     private void entrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarButtonActionPerformed
         // TODO add your handling code here:
-        
+        String login = usuarioTextField.toString();
+        String senha = senhaPasswordField.toString();
+        if(UsuarioDAO.validaLogin(login, senha)){
+            NovaTela dr = new NovaTela();
+            dr.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_entrarButtonActionPerformed
 
     /**
