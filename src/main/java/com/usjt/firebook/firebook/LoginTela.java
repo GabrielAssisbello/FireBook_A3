@@ -1,14 +1,5 @@
 package com.usjt.firebook.firebook;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
-/**
- *
- * @author Luke
- */
 public class LoginTela extends javax.swing.JFrame {
 
     /**
@@ -56,7 +47,7 @@ public class LoginTela extends javax.swing.JFrame {
         fireBookLabel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         fireBookLabel.setText("FireBook");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/firebook65x65.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/firebook65x65.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,9 +103,10 @@ public class LoginTela extends javax.swing.JFrame {
         // TODO add your handling code here:
         String login = usuarioTextField.toString();
         String senha = senhaPasswordField.toString();
+        System.out.println(login + " " + senha);
         if(UsuarioDAO.validaLogin(login, senha)){
-            NovaTela dr = new NovaTela();
-            dr.setVisible(true);
+            NovaTela novaTela = new NovaTela();
+            novaTela.setVisible(true);
             this.dispose();
         }
     }//GEN-LAST:event_entrarButtonActionPerformed
