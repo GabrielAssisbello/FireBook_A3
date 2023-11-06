@@ -4,10 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 public class ConnectionFactory {
     
-    private static final String host = "mysql-14f5acad-aluno-208e.aivencloud.com";
-    private static final String port = "12853";
+    private static final String host = "mysql-1462dbf-lucaslag-0d39.aivencloud.com";
+    private static final String port = "22299";
     private static final String user = "avnadmin";
-    private static final String password = "AVNS_5h1pGTmZzoh4H4BsjVK";
+    private static final String password = "AVNS_rNvRFUUwNkZX-vaejFP";
     private static final String db = "db_firebook";
     
     public static Connection conectar() {

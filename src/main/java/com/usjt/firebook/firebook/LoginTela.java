@@ -1,6 +1,7 @@
 package com.usjt.firebook.firebook;
 
 import javax.swing.JOptionPane;
+import com.usjt.firebook.firebook.UsuarioDAO;
 
 public class LoginTela extends javax.swing.JFrame {
 
@@ -103,20 +104,24 @@ public class LoginTela extends javax.swing.JFrame {
 
     private void entrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarButtonActionPerformed
         String login = usuarioTextField.getText();
-        String senha = new String (senhaPasswordField.getPassword());
+        String senha = new String(senhaPasswordField.getPassword());
         //System.out.println(login + " " + senha);
-        if (login.equals("admin") && senha.equals("admin")){
-            NovaTela novaTela = new NovaTela();
-            novaTela.setVisible(true);
-            this.dispose();
+        try {
+            Usuario usuario = new Usuario (login, senha);
+            if (UsuarioDAO.validaLogin(usuario)) {
+                JOptionPane.showMessageDialog (null, "Bem-vindo ao sistema, " + usuario.getNome());
+                var ht = new HomeTela();
+                ht.setVisible(true);
+                this.dispose();
+            }
+            else {
+                JOptionPane.showMessageDialog (null, "Usuário não cadastrado");
+            }
         }
-        else
-            JOptionPane.showMessageDialog(null, "Usuário inválido");
-        //if(UsuarioDAO.validaLogin(login, senha)){
-        //    NovaTela novaTela = new NovaTela();
-        //    novaTela.setVisible(true);
-        //    this.dispose();
-        //}
+        catch (Exception e) {
+            JOptionPane.showMessageDialog (null, "Problemas na conexão");
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_entrarButtonActionPerformed
 
     /**
