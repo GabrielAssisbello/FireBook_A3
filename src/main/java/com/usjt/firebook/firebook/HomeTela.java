@@ -9,12 +9,20 @@ package com.usjt.firebook.firebook;
  * @author Luke
  */
 public class HomeTela extends javax.swing.JFrame {
+    
+    Usuario logado;
 
     /**
      * Creates new form NovaTela
      */
     public HomeTela() {
         initComponents();
+        this.setLocationRelativeTo(null);
+    }
+    
+    public HomeTela(Usuario logado) {
+        this();
+        this.logado = logado;
     }
 
     /**
@@ -29,10 +37,12 @@ public class HomeTela extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         sairButton = new javax.swing.JButton();
         cadastrarUsuarioButton = new javax.swing.JButton();
+        cadastrarLivroButton = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(313, 313));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         sairButton.setText("Sair");
@@ -41,7 +51,7 @@ public class HomeTela extends javax.swing.JFrame {
                 sairButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(sairButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 133, 43));
+        getContentPane().add(sairButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 180, 43));
 
         cadastrarUsuarioButton.setText("Cadastrar Usuario");
         cadastrarUsuarioButton.addActionListener(new java.awt.event.ActionListener() {
@@ -49,7 +59,15 @@ public class HomeTela extends javax.swing.JFrame {
                 cadastrarUsuarioButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(cadastrarUsuarioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 133, 43));
+        getContentPane().add(cadastrarUsuarioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 180, 43));
+
+        cadastrarLivroButton.setText("Cadastrar Livro");
+        cadastrarLivroButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarLivroButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cadastrarLivroButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 180, 43));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -59,10 +77,16 @@ public class HomeTela extends javax.swing.JFrame {
     }//GEN-LAST:event_sairButtonActionPerformed
 
     private void cadastrarUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarUsuarioButtonActionPerformed
-        var cut = new CadastroUsuarioTela();
+        var cut = new CadastroUsuarioTela(logado);
         cut.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cadastrarUsuarioButtonActionPerformed
+
+    private void cadastrarLivroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarLivroButtonActionPerformed
+        var clt = new CadastroLivroTela(logado);
+        clt.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_cadastrarLivroButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -103,6 +127,7 @@ public class HomeTela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cadastrarLivroButton;
     private javax.swing.JButton cadastrarUsuarioButton;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton sairButton;

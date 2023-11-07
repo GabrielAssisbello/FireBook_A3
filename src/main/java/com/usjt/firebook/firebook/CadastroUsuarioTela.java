@@ -11,12 +11,20 @@ import javax.swing.JOptionPane;
  * @author Luke
  */
 public class CadastroUsuarioTela extends javax.swing.JFrame {
+    
+    Usuario logado;
 
     /**
      * Creates new form CadastroUsuarioTela
      */
     public CadastroUsuarioTela() {
         initComponents();
+        this.setLocationRelativeTo(null);
+    }
+    
+    public CadastroUsuarioTela(Usuario logado) {
+        this();
+        this.logado = logado;
     }
 
     /**
@@ -44,6 +52,8 @@ public class CadastroUsuarioTela extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(389, 500));
+        setPreferredSize(new java.awt.Dimension(399, 545));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         loginTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Login"));
@@ -97,7 +107,7 @@ public class CadastroUsuarioTela extends javax.swing.JFrame {
         jLabel1.setText("Generos Preferidos:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 230, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Cadastrar Novo Usuario");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 310, 50));
@@ -108,9 +118,9 @@ public class CadastroUsuarioTela extends javax.swing.JFrame {
     private void romanceRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_romanceRadioButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_romanceRadioButtonActionPerformed
-
+    
     private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
-        var ht = new HomeTela();
+        var ht = new HomeTela(logado);
         ht.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_voltarButtonActionPerformed
@@ -133,8 +143,8 @@ public class CadastroUsuarioTela extends javax.swing.JFrame {
             Usuario usuario = new Usuario(nome, login, senha, idade, genero, tipo);
             UsuarioDAO.cadastrar(usuario);
             System.out.println("Usuario cadastrado com sucesso!");
-            UsuarioDAO.selectId(usuario);
-            System.out.println("Select de id realizado com sucesso!");
+            UsuarioDAO.receberDados(usuario);
+            System.out.println("Select realizado com sucesso!");
             
             //tentando cadastrar os generos preferidos do usario na tabela tb_preferidos
             //1 = romance
@@ -153,9 +163,10 @@ public class CadastroUsuarioTela extends javax.swing.JFrame {
                 var p = new Preferido(usuario.getIdUsuario(), 3);
                 PreferidoDAO.registrar(p);
             }
+            System.out.println("Preferencias cadastradas com sucesso!");
             
             JOptionPane.showMessageDialog (null, "Usuario cadastrado com sucesso!");
-            var ht = new HomeTela();
+            var ht = new HomeTela(logado);
             ht.setVisible(true);
             this.dispose();
         }

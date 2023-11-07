@@ -37,7 +37,8 @@ descricao VARCHAR(30)
 
 CREATE TABLE tb_livro(
 id_livro INT PRIMARY KEY AUTO_INCREMENT,
-titulo VARCHAR(30) NOT NULL,
+titulo VARCHAR(50) NOT NULL,
+autor VARCHAR(50) NOT NULL,
 id_genero INT NOT NULL,
 id_usuario INT NOT NULL,
 CONSTRAINT FK_livro_genero FOREIGN KEY (id_genero) REFERENCES tb_genero(id_genero),

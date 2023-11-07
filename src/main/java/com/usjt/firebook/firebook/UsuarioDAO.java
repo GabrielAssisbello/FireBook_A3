@@ -60,7 +60,7 @@ public class UsuarioDAO {
         }
     }
     
-    public static void selectId(Usuario usuario)  throws Exception{
+    public static void receberDados(Usuario usuario)  throws Exception{
         String sql = "SELECT * FROM tb_usuario WHERE login = ? AND senha = ?";
         try (var conn = ConnectionFactory.conectar();
             PreparedStatement ps = conn.prepareStatement(sql)){
@@ -68,7 +68,13 @@ public class UsuarioDAO {
             ps.setString(2, usuario.getSenha());
             try(ResultSet rs = ps.executeQuery()) {
                 rs.next();
-                usuario.setIdUsuario(rs.getInt("id_usuario")); 
+                usuario.setIdUsuario(rs.getInt("id_usuario"));
+                usuario.setLogin(rs.getString("login"));
+                usuario.setSenha(rs.getString("senha"));
+                usuario.setNome(rs.getString("nome"));
+                usuario.setIdade(rs.getInt("idade"));
+                usuario.setGenero(rs.getString("genero"));
+                usuario.setTipo(rs.getInt("id_tipo_usuario"));
             }
         }
     }
