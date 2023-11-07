@@ -171,7 +171,7 @@ public class CadastroUsuarioTela extends javax.swing.JFrame {
             this.dispose();
         }
         catch (Exception e) {
-            JOptionPane.showMessageDialog (null, "Problemas na conexão");
+            JOptionPane.showMessageDialog (null, "Erro ao cadastrar o usuario");
             e.printStackTrace();
         }
         

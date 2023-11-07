@@ -4,6 +4,8 @@
  */
 package com.usjt.firebook.firebook;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author 823218506
@@ -129,10 +131,25 @@ public class CadastroLivroTela extends javax.swing.JFrame {
         //atribui ao livro o ID do usuario que o cadastrou
         livro.setIdUsuario(logado.getIdUsuario());
         
-        //enviar para tabela avaliaçao depois
-        int nota = Integer.parseInt(notaTextField.getText());
-        
-        //TODO enviar esses dados para o banco!
+        try {
+            LivroDAO.cadastrar(livro);
+            LivroDAO.receberDados(livro);
+            Avaliacao avaliacao = new Avaliacao();
+            avaliacao.setNota(Integer.parseInt(notaTextField.getText()));
+            avaliacao.setIdLivro(livro.getIdLivro());
+            avaliacao.setIdUsuario(logado.getIdUsuario());
+            
+            System.out.println("Livro cadastrado com sucesso!");
+
+            JOptionPane.showMessageDialog(null, "Livro cadastrado com sucesso!");
+            var ht = new HomeTela(logado);
+            ht.setVisible(true);
+            this.dispose();
+        }
+        catch (Exception e) {
+            JOptionPane.showMessageDialog (null, "Erro ao cadastrar o livro/avaliacao");
+            e.printStackTrace();
+        }
         
     }//GEN-LAST:event_cadastrarButtonActionPerformed
 
