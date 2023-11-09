@@ -7,8 +7,7 @@ public class LivroDAO {
     
     public static void cadastrar(Livro l) throws Exception {
         String sql = "INSERT INTO tb_livro(titulo, autor, id_genero, id_usuario) VALUES (?, ?, ?, ?)";
-        var fabricaDeConexoes = new ConnectionFactory();
-        var conexao = fabricaDeConexoes.conectar();
+        var conexao = ConnectionFactory.conectar(LeitorDeProperties.ler());
         PreparedStatement ps = conexao.prepareStatement(sql);
         ps.setString(1, l.getTitulo());
         ps.setString(2, l.getAutor());
@@ -21,8 +20,8 @@ public class LivroDAO {
     
     public static void receberDados(Livro l)  throws Exception{
         String sql = "SELECT * FROM tb_livro WHERE titulo = ? AND id_usuario = ?";
-        try (var conn = ConnectionFactory.conectar();
-            PreparedStatement ps = conn.prepareStatement(sql)){
+        try (var conexao = ConnectionFactory.conectar(LeitorDeProperties.ler());
+            PreparedStatement ps = conexao.prepareStatement(sql)){
             ps.setString(1, l.getTitulo());
             ps.setInt(2, l.getIdUsuario());
             try(ResultSet rs = ps.executeQuery()) {

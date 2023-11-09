@@ -7,8 +7,7 @@ import java.sql.SQLException;
 public class UsuarioDAO {
     public static void cadastrar(Usuario u) throws Exception {
         String sql = "INSERT INTO tb_usuario(nome, login, senha, idade, genero, id_tipo_usuario) VALUES (?, ?, ?, ?, ?, ?)";
-        var fabricaDeConexoes = new ConnectionFactory();
-        var conexao = fabricaDeConexoes.conectar();
+        var conexao = ConnectionFactory.conectar(LeitorDeProperties.ler());
         PreparedStatement ps = conexao.prepareStatement(sql);
         ps.setString(1, u.getNome());
         ps.setString(2, u.getLogin());
@@ -25,7 +24,7 @@ public class UsuarioDAO {
         String sql = 
         "UPDATE tb_usuario SET nome = ?, login = ?, senha = ?, tipo = ? WHERE id_usuario = ?;";
         try(
-            var conexao = ConnectionFactory.conectar();
+            var conexao = ConnectionFactory.conectar(LeitorDeProperties.ler());
             var ps = conexao.prepareStatement(sql);
         ){
             ps.setString(1, u.getNome());
@@ -40,7 +39,7 @@ public class UsuarioDAO {
     public void deletar(Usuario u) throws Exception{
         String sql = "DELETE FROM tb_usuario WHERE id_usuario = ?";
         try(
-            var conexao = new ConnectionFactory().conectar();
+            var conexao = ConnectionFactory.conectar(LeitorDeProperties.ler());
             var ps = conexao.prepareStatement(sql);
         ){
             ps.setInt(1, u.getIdUsuario());
@@ -50,8 +49,8 @@ public class UsuarioDAO {
 
     public static boolean validaLogin(Usuario usuario)  throws Exception{
         String sql = "SELECT * FROM tb_usuario WHERE login = ? AND senha = ?";
-        try (var conn = ConnectionFactory.conectar();
-            PreparedStatement ps = conn.prepareStatement(sql)){
+        try (var conexao = ConnectionFactory.conectar(LeitorDeProperties.ler());
+            PreparedStatement ps = conexao.prepareStatement(sql)){
             ps.setString(1, usuario.getLogin());
             ps.setString(2, usuario.getSenha());
             try(ResultSet rs = ps.executeQuery()) {
@@ -62,8 +61,8 @@ public class UsuarioDAO {
     
     public static void receberDados(Usuario usuario)  throws Exception{
         String sql = "SELECT * FROM tb_usuario WHERE login = ? AND senha = ?";
-        try (var conn = ConnectionFactory.conectar();
-            PreparedStatement ps = conn.prepareStatement(sql)){
+        try (var conexao = ConnectionFactory.conectar(LeitorDeProperties.ler());
+            PreparedStatement ps = conexao.prepareStatement(sql)){
             ps.setString(1, usuario.getLogin());
             ps.setString(2, usuario.getSenha());
             try(ResultSet rs = ps.executeQuery()) {

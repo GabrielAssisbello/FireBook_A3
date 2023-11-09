@@ -6,8 +6,7 @@ public class AvaliacaoDAO {
     
     public static void cadastrar(Avaliacao a) throws Exception {
         String sql = "INSERT INTO tb_avaliacao(nota, id_usuario, id_livro) VALUES (?, ?, ?)";
-        var fabricaDeConexoes = new ConnectionFactory();
-        var conexao = fabricaDeConexoes.conectar();
+        var conexao = ConnectionFactory.conectar(LeitorDeProperties.ler());
         PreparedStatement ps = conexao.prepareStatement(sql);
         ps.setInt(1, a.getNota());
         ps.setInt(2, a.getIdUsuario());
