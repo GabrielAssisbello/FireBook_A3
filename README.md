@@ -1,4 +1,4 @@
-# FireBook ![Image](https://raw.githubusercontent.com/GabrielBAssis/FireBook_A3/main/src/main/resources/imagens/firebook100.png)
+# FireBook ![Image](https://raw.githubusercontent.com/GabrielBAssis/FireBook_A3/main/src/main/resources/imagens/firebook65x65.png)
 
 ---
 
