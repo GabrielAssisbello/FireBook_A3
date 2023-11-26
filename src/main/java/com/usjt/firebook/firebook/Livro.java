@@ -82,12 +82,9 @@ public class Livro implements Comparable <Livro>{
             
         }
         
-        else if(this.getNota() > l.getNota()) return 1;
+        else if(this.getNota() < l.getNota()) return 1;
         
         else return -1;
     }
-    
-    
-    
     
 }

@@ -27,6 +27,18 @@ public class ListaLivros {
             DefaultListModel model = new DefaultListModel();
             for(Livro livro : listaDeLivros){
                 model.addElement("Titulo: " + livro.getTitulo());
+                model.addElement("Autor: " + livro.getAutor());
+                switch(livro.getIdGenero()){
+                    case 1:
+                        model.addElement("Genero: Romance");
+                        break;
+                    case 2:
+                        model.addElement("Genero: Ficção");
+                        break;
+                    case 3:
+                        model.addElement("Genero: Técnico");
+                        break;
+                }
                 model.addElement("Nota: " + livro.getNota());
                 model.addElement("Avaliações: " + livro.getNumAvaliacoes());
                 model.addElement("-----");
