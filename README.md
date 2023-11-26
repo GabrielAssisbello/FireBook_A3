@@ -80,7 +80,7 @@ ordenada
 
 #### Integrantes:
 
-- [Gabriel Bell Assis](https://github.com/GabrielBAssis/)
+- [Gabriel Bello Assis](https://github.com/GabrielBAssis/)
 - [Lucas Carrieri Dos Santos](https://github.com/LucasCarrieri/)
 - [Lucas Martins Teixeira](https://github.com/LucasMLag/)
 

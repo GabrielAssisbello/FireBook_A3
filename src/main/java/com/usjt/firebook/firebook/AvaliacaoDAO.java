@@ -1,6 +1,7 @@
 package com.usjt.firebook.firebook;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class AvaliacaoDAO {
     
@@ -15,5 +16,4 @@ public class AvaliacaoDAO {
         ps.close();
         conexao.close();
     }
-    
 }

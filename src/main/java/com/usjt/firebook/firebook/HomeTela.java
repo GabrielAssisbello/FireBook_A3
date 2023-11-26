@@ -38,11 +38,13 @@ public class HomeTela extends javax.swing.JFrame {
         sairButton = new javax.swing.JButton();
         cadastrarUsuarioButton = new javax.swing.JButton();
         cadastrarLivroButton = new javax.swing.JButton();
+        listaDeLivrosButton = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(313, 313));
+        setMinimumSize(new java.awt.Dimension(313, 360));
+        setPreferredSize(new java.awt.Dimension(313, 360));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         sairButton.setText("Sair");
@@ -51,7 +53,7 @@ public class HomeTela extends javax.swing.JFrame {
                 sairButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(sairButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 180, 43));
+        getContentPane().add(sairButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 180, 43));
 
         cadastrarUsuarioButton.setText("Cadastrar Usuario");
         cadastrarUsuarioButton.addActionListener(new java.awt.event.ActionListener() {
@@ -59,7 +61,7 @@ public class HomeTela extends javax.swing.JFrame {
                 cadastrarUsuarioButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(cadastrarUsuarioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 180, 43));
+        getContentPane().add(cadastrarUsuarioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 180, 43));
 
         cadastrarLivroButton.setText("Cadastrar Livro");
         cadastrarLivroButton.addActionListener(new java.awt.event.ActionListener() {
@@ -67,7 +69,15 @@ public class HomeTela extends javax.swing.JFrame {
                 cadastrarLivroButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(cadastrarLivroButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 180, 43));
+        getContentPane().add(cadastrarLivroButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 180, 43));
+
+        listaDeLivrosButton.setText("Lista de Livros");
+        listaDeLivrosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaDeLivrosButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(listaDeLivrosButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 180, 43));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -87,6 +97,12 @@ public class HomeTela extends javax.swing.JFrame {
         clt.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cadastrarLivroButtonActionPerformed
+
+    private void listaDeLivrosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaDeLivrosButtonActionPerformed
+        var llt = new ListaLivrosTela(logado);
+        llt.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_listaDeLivrosButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,6 +146,7 @@ public class HomeTela extends javax.swing.JFrame {
     private javax.swing.JButton cadastrarLivroButton;
     private javax.swing.JButton cadastrarUsuarioButton;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton listaDeLivrosButton;
     private javax.swing.JButton sairButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,8 +1,9 @@
 package com.usjt.firebook.firebook;
 
-public class Livro {
+public class Livro implements Comparable <Livro>{
     
-    private int idLivro, idGenero, idUsuario;
+    private double nota;
+    private int idLivro, idGenero, idUsuario, numAvaliacoes;
     private String titulo, autor;
 
     public int getIdLivro() {
@@ -44,6 +45,48 @@ public class Livro {
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
     }
+
+    public double getNota() {
+        return nota;
+    }
+
+    public void setNota(double nota) {
+        this.nota = nota;
+    }
+
+    public int getNumAvaliacoes() {
+        return numAvaliacoes;
+    }
+
+    public void setNumAvaliacoes(int numAvaliacoes) {
+        this.numAvaliacoes = numAvaliacoes;
+    }
+    
+    @Override
+    public int compareTo(Livro l){
+        
+        // começa comparando por nota
+        if(this.getNota() == l.getNota()){
+            
+            // desempata por numero de avaliacoes
+            if(this.getNumAvaliacoes() == l.getNumAvaliacoes()){
+                
+                // desempata de novo por titulo
+                return this.getTitulo().compareTo(l.getTitulo());
+                        
+            }
+            
+            else if(this.getNumAvaliacoes() > l.getNumAvaliacoes()) return 1;
+        
+            else return -1;
+            
+        }
+        
+        else if(this.getNota() > l.getNota()) return 1;
+        
+        else return -1;
+    }
+    
     
     
     

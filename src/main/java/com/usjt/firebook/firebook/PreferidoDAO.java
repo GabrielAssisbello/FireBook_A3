@@ -1,6 +1,7 @@
 package com.usjt.firebook.firebook;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class PreferidoDAO {
     
@@ -14,5 +15,4 @@ public class PreferidoDAO {
         ps.close();
         conexao.close();
     }
-    
 }
