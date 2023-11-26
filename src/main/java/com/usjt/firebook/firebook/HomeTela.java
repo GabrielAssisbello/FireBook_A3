@@ -55,7 +55,7 @@ public class HomeTela extends javax.swing.JFrame {
         });
         getContentPane().add(sairButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 180, 43));
 
-        cadastrarUsuarioButton.setText("Cadastrar Usuario");
+        cadastrarUsuarioButton.setText("Cadastrar Usuário");
         cadastrarUsuarioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastrarUsuarioButtonActionPerformed(evt);
@@ -71,7 +71,7 @@ public class HomeTela extends javax.swing.JFrame {
         });
         getContentPane().add(cadastrarLivroButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 180, 43));
 
-        listaDeLivrosButton.setText("Lista de Livros");
+        listaDeLivrosButton.setText("Lista De Livros");
         listaDeLivrosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listaDeLivrosButtonActionPerformed(evt);

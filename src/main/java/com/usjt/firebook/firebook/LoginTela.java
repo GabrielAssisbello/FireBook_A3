@@ -58,7 +58,7 @@ public class LoginTela extends javax.swing.JFrame {
 
         voltarButton.setText("Voltar");
 
-        usuarioTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Usuario"));
+        usuarioTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Usuário"));
 
         senhaPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder("Senha"));
 

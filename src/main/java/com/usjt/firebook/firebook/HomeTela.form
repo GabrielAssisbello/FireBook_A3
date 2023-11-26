@@ -53,7 +53,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="cadastrarUsuarioButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cadastrar Usuario"/>
+        <Property name="text" type="java.lang.String" value="Cadastrar Usu&#xe1;rio"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastrarUsuarioButtonActionPerformed"/>
@@ -79,7 +79,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="listaDeLivrosButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Lista de Livros"/>
+        <Property name="text" type="java.lang.String" value="Lista De Livros"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listaDeLivrosButtonActionPerformed"/>

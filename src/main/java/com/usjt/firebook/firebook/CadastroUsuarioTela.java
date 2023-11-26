@@ -81,10 +81,10 @@ public class CadastroUsuarioTela extends javax.swing.JFrame {
         });
         getContentPane().add(cadastrarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, 140, 40));
 
-        administradorCheckBox.setText("Dar permições de adminstrador");
+        administradorCheckBox.setText("Dar permissões de adminstrador");
         getContentPane().add(administradorCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, -1, -1));
 
-        generoTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Genero"));
+        generoTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Gênero"));
         getContentPane().add(generoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 310, 40));
 
         idadeTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Idade"));
@@ -104,7 +104,7 @@ public class CadastroUsuarioTela extends javax.swing.JFrame {
         tecnicoRadioButton.setText("Técnico");
         getContentPane().add(tecnicoRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, -1, -1));
 
-        jLabel1.setText("Generos Preferidos:");
+        jLabel1.setText("Gêneros Literários Preferidos:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 230, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N

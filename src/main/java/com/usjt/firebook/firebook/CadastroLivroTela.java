@@ -36,6 +36,7 @@ public class CadastroLivroTela extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        generoGroup = new javax.swing.ButtonGroup();
         notaTextField = new javax.swing.JTextField();
         tituloTextField = new javax.swing.JTextField();
         voltarButton = new javax.swing.JButton();
@@ -74,6 +75,7 @@ public class CadastroLivroTela extends javax.swing.JFrame {
         });
         getContentPane().add(cadastrarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 150, 40));
 
+        generoGroup.add(romanceRadioButton);
         romanceRadioButton.setText("Romance");
         romanceRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,9 +84,11 @@ public class CadastroLivroTela extends javax.swing.JFrame {
         });
         getContentPane().add(romanceRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
 
+        generoGroup.add(ficcaoRadioButton);
         ficcaoRadioButton.setText("Ficção");
         getContentPane().add(ficcaoRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, -1, -1));
 
+        generoGroup.add(tecnicoRadioButton);
         tecnicoRadioButton.setText("Técnico");
         getContentPane().add(tecnicoRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, -1, -1));
 
@@ -201,6 +205,7 @@ public class CadastroLivroTela extends javax.swing.JFrame {
     private javax.swing.JButton cadastrarButton;
     private javax.swing.JLabel cadastrarNovoLivroLabel;
     private javax.swing.JRadioButton ficcaoRadioButton;
+    private javax.swing.ButtonGroup generoGroup;
     private javax.swing.JLabel generoLabel;
     private javax.swing.JTextField loginTextField2;
     private javax.swing.JTextField notaTextField;
