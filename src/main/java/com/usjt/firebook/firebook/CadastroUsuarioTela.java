@@ -36,7 +36,8 @@ public class CadastroUsuarioTela extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        generosButtonGroup = new javax.swing.ButtonGroup();
+        generoPrimarioGroup = new javax.swing.ButtonGroup();
+        generoSecundarioGroup = new javax.swing.ButtonGroup();
         loginTextField = new javax.swing.JTextField();
         nomeTextField = new javax.swing.JTextField();
         voltarButton = new javax.swing.JButton();
@@ -45,15 +46,19 @@ public class CadastroUsuarioTela extends javax.swing.JFrame {
         administradorCheckBox = new javax.swing.JCheckBox();
         generoTextField = new javax.swing.JTextField();
         idadeTextField = new javax.swing.JTextField();
-        romanceRadioButton = new javax.swing.JRadioButton();
-        ficcaoRadioButton = new javax.swing.JRadioButton();
-        tecnicoRadioButton = new javax.swing.JRadioButton();
+        romanceSecundarioRadioButton = new javax.swing.JRadioButton();
+        ficcaoSecundarioRadioButton = new javax.swing.JRadioButton();
+        tecnicoSecundarioRadioButton = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        romancePrimarioRadioButton = new javax.swing.JRadioButton();
+        ficcaoPrimarioRadioButton = new javax.swing.JRadioButton();
+        tecnicoPrimarioRadioButton = new javax.swing.JRadioButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(389, 500));
-        setPreferredSize(new java.awt.Dimension(399, 545));
+        setPreferredSize(new java.awt.Dimension(399, 625));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         loginTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Login"));
@@ -68,7 +73,7 @@ public class CadastroUsuarioTela extends javax.swing.JFrame {
                 voltarButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(voltarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 140, 40));
+        getContentPane().add(voltarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 510, 140, 40));
 
         senhaPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder("Senha"));
         getContentPane().add(senhaPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 310, 40));
@@ -79,10 +84,10 @@ public class CadastroUsuarioTela extends javax.swing.JFrame {
                 cadastrarButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(cadastrarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, 140, 40));
+        getContentPane().add(cadastrarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 510, 140, 40));
 
         administradorCheckBox.setText("Dar permissões de adminstrador");
-        getContentPane().add(administradorCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, -1, -1));
+        getContentPane().add(administradorCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, -1, -1));
 
         generoTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Gênero"));
         getContentPane().add(generoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 310, 40));
@@ -90,34 +95,57 @@ public class CadastroUsuarioTela extends javax.swing.JFrame {
         idadeTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Idade"));
         getContentPane().add(idadeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 310, 40));
 
-        romanceRadioButton.setText("Romance");
-        romanceRadioButton.addActionListener(new java.awt.event.ActionListener() {
+        generoSecundarioGroup.add(romanceSecundarioRadioButton);
+        romanceSecundarioRadioButton.setText("Romance");
+        romanceSecundarioRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                romanceRadioButtonActionPerformed(evt);
+                romanceSecundarioRadioButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(romanceRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
+        getContentPane().add(romanceSecundarioRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, -1, -1));
 
-        ficcaoRadioButton.setText("Ficção");
-        getContentPane().add(ficcaoRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 380, -1, -1));
+        generoSecundarioGroup.add(ficcaoSecundarioRadioButton);
+        ficcaoSecundarioRadioButton.setText("Ficção");
+        getContentPane().add(ficcaoSecundarioRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, -1, -1));
 
-        tecnicoRadioButton.setText("Técnico");
-        getContentPane().add(tecnicoRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, -1, -1));
+        generoSecundarioGroup.add(tecnicoSecundarioRadioButton);
+        tecnicoSecundarioRadioButton.setText("Técnico");
+        getContentPane().add(tecnicoSecundarioRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, -1, -1));
 
-        jLabel1.setText("Gêneros Literários Preferidos:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 230, -1));
+        jLabel1.setText("Segundo Gênero Literário Preferido:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 230, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Cadastrar Novo Usuario");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 310, 50));
 
+        generoPrimarioGroup.add(romancePrimarioRadioButton);
+        romancePrimarioRadioButton.setText("Romance");
+        romancePrimarioRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                romancePrimarioRadioButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(romancePrimarioRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
+
+        generoPrimarioGroup.add(ficcaoPrimarioRadioButton);
+        ficcaoPrimarioRadioButton.setText("Ficção");
+        getContentPane().add(ficcaoPrimarioRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 380, -1, -1));
+
+        generoPrimarioGroup.add(tecnicoPrimarioRadioButton);
+        tecnicoPrimarioRadioButton.setText("Técnico");
+        getContentPane().add(tecnicoPrimarioRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, -1, -1));
+
+        jLabel3.setText("Gêneros Literários Preferido:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 230, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void romanceRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_romanceRadioButtonActionPerformed
+    private void romanceSecundarioRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_romanceSecundarioRadioButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_romanceRadioButtonActionPerformed
+    }//GEN-LAST:event_romanceSecundarioRadioButtonActionPerformed
     
     private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
         var ht = new HomeTela(logado);
@@ -151,18 +179,31 @@ public class CadastroUsuarioTela extends javax.swing.JFrame {
             //2 = ficção
             //3 = técnico
             
-            if (romanceRadioButton.isSelected()){
+            if (romancePrimarioRadioButton.isSelected()){
                 var p = new Preferido(usuario.getIdUsuario(), 1);
                 PreferidoDAO.registrar(p);
             }
-            if (ficcaoRadioButton.isSelected()){
+            if (ficcaoPrimarioRadioButton.isSelected()){
                 var p = new Preferido(usuario.getIdUsuario(), 2);
                 PreferidoDAO.registrar(p);
             }
-            if (tecnicoRadioButton.isSelected()){
+            if (tecnicoPrimarioRadioButton.isSelected()){
                 var p = new Preferido(usuario.getIdUsuario(), 3);
                 PreferidoDAO.registrar(p);
             }
+            if (romanceSecundarioRadioButton.isSelected() && !romancePrimarioRadioButton.isSelected()){
+                var p = new Preferido(usuario.getIdUsuario(), 1);
+                PreferidoDAO.registrar(p);
+            }
+            if (ficcaoSecundarioRadioButton.isSelected() && !ficcaoPrimarioRadioButton.isSelected()){
+                var p = new Preferido(usuario.getIdUsuario(), 2);
+                PreferidoDAO.registrar(p);
+            }
+            if (tecnicoSecundarioRadioButton.isSelected() && !tecnicoPrimarioRadioButton.isSelected()){
+                var p = new Preferido(usuario.getIdUsuario(), 3);
+                PreferidoDAO.registrar(p);
+            }
+            
             System.out.println("Preferencias cadastradas com sucesso!");
             
             JOptionPane.showMessageDialog (null, "Usuario cadastrado com sucesso!");
@@ -176,6 +217,10 @@ public class CadastroUsuarioTela extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_cadastrarButtonActionPerformed
+
+    private void romancePrimarioRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_romancePrimarioRadioButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_romancePrimarioRadioButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,17 +260,22 @@ public class CadastroUsuarioTela extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox administradorCheckBox;
     private javax.swing.JButton cadastrarButton;
-    private javax.swing.JRadioButton ficcaoRadioButton;
+    private javax.swing.JRadioButton ficcaoPrimarioRadioButton;
+    private javax.swing.JRadioButton ficcaoSecundarioRadioButton;
+    private javax.swing.ButtonGroup generoPrimarioGroup;
+    private javax.swing.ButtonGroup generoSecundarioGroup;
     private javax.swing.JTextField generoTextField;
-    private javax.swing.ButtonGroup generosButtonGroup;
     private javax.swing.JTextField idadeTextField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField loginTextField;
     private javax.swing.JTextField nomeTextField;
-    private javax.swing.JRadioButton romanceRadioButton;
+    private javax.swing.JRadioButton romancePrimarioRadioButton;
+    private javax.swing.JRadioButton romanceSecundarioRadioButton;
     private javax.swing.JPasswordField senhaPasswordField;
-    private javax.swing.JRadioButton tecnicoRadioButton;
+    private javax.swing.JRadioButton tecnicoPrimarioRadioButton;
+    private javax.swing.JRadioButton tecnicoSecundarioRadioButton;
     private javax.swing.JButton voltarButton;
     // End of variables declaration//GEN-END:variables
 }
