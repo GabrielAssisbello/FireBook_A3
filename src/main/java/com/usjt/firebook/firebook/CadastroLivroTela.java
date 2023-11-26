@@ -110,8 +110,8 @@ public class CadastroLivroTela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
-        var ht = new HomeTela(logado);
-        ht.setVisible(true);
+        var dut = new DashboardUsuarioTela(logado);
+        dut.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_voltarButtonActionPerformed
 
@@ -150,8 +150,8 @@ public class CadastroLivroTela extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(null, "Livro cadastrado com sucesso!");
             
-            var ht = new HomeTela(logado);
-            ht.setVisible(true);
+            var dut = new DashboardUsuarioTela(logado);
+            dut.setVisible(true);
             this.dispose();
         }
         catch (Exception e) {

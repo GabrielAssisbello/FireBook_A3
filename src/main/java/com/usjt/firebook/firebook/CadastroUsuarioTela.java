@@ -148,8 +148,8 @@ public class CadastroUsuarioTela extends javax.swing.JFrame {
     }//GEN-LAST:event_romanceSecundarioRadioButtonActionPerformed
     
     private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
-        var ht = new HomeTela(logado);
-        ht.setVisible(true);
+        var dat = new DashboardAdminTela(logado);
+        dat.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_voltarButtonActionPerformed
 
@@ -207,8 +207,8 @@ public class CadastroUsuarioTela extends javax.swing.JFrame {
             System.out.println("Preferencias cadastradas com sucesso!");
             
             JOptionPane.showMessageDialog (null, "Usuario cadastrado com sucesso!");
-            var ht = new HomeTela(logado);
-            ht.setVisible(true);
+            var dat = new DashboardAdminTela(logado);
+            dat.setVisible(true);
             this.dispose();
         }
         catch (Exception e) {

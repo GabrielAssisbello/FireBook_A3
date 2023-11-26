@@ -126,9 +126,18 @@ public class LoginTela extends javax.swing.JFrame {
             if (UsuarioDAO.validaLogin(usuario)) {
                 UsuarioDAO.receberDados(usuario);
                 JOptionPane.showMessageDialog (null, "Bem-vindo ao sistema, " + usuario.getNome());
-                var ht = new HomeTela(usuario);
-                ht.setVisible(true);
-                this.dispose();
+                
+                if(usuario.getTipo() == 1) { // admin
+                    var dat = new DashboardAdminTela(usuario);
+                    dat.setVisible(true);
+                    this.dispose();
+                }
+                else { // usuario
+                    var dut = new DashboardUsuarioTela(usuario);
+                    dut.setVisible(true);
+                    this.dispose();
+                }
+                
             }
             else {
                 JOptionPane.showMessageDialog (null, "Usuário não cadastrado");

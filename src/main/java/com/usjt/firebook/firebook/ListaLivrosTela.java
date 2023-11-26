@@ -84,8 +84,8 @@ public class ListaLivrosTela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
-        var ht = new HomeTela(logado);
-        ht.setVisible(true);
+        var dut = new DashboardUsuarioTela(logado);
+        dut.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_voltarButtonActionPerformed
 

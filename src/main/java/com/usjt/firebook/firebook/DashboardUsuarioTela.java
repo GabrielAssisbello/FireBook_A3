@@ -8,19 +8,19 @@ package com.usjt.firebook.firebook;
  *
  * @author Luke
  */
-public class HomeTela extends javax.swing.JFrame {
+public class DashboardUsuarioTela extends javax.swing.JFrame {
     
     Usuario logado;
 
     /**
-     * Creates new form NovaTela
+     * Creates new form DashboardUsuarioTela
      */
-    public HomeTela() {
+    public DashboardUsuarioTela() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
     
-    public HomeTela(Usuario logado) {
+    public DashboardUsuarioTela(Usuario logado) {
         this();
         this.logado = logado;
     }
@@ -34,18 +34,16 @@ public class HomeTela extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
+        dashboardUsuarioLabel = new javax.swing.JLabel();
         sairButton = new javax.swing.JButton();
-        cadastrarUsuarioButton = new javax.swing.JButton();
         cadastrarLivroButton = new javax.swing.JButton();
         listaDeLivrosButton = new javax.swing.JButton();
 
-        jTextField1.setText("jTextField1");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(313, 360));
-        setPreferredSize(new java.awt.Dimension(313, 360));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        dashboardUsuarioLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        dashboardUsuarioLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dashboardUsuarioLabel.setText("Dashboard Usuário");
 
         sairButton.setText("Sair");
         sairButton.addActionListener(new java.awt.event.ActionListener() {
@@ -53,15 +51,6 @@ public class HomeTela extends javax.swing.JFrame {
                 sairButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(sairButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 180, 43));
-
-        cadastrarUsuarioButton.setText("Cadastrar Usuário");
-        cadastrarUsuarioButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastrarUsuarioButtonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cadastrarUsuarioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 180, 43));
 
         cadastrarLivroButton.setText("Cadastrar Livro");
         cadastrarLivroButton.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +58,6 @@ public class HomeTela extends javax.swing.JFrame {
                 cadastrarLivroButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(cadastrarLivroButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 180, 43));
 
         listaDeLivrosButton.setText("Lista De Livros");
         listaDeLivrosButton.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +65,36 @@ public class HomeTela extends javax.swing.JFrame {
                 listaDeLivrosButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(listaDeLivrosButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 180, 43));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(dashboardUsuarioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cadastrarLivroButton, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(listaDeLivrosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sairButton, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(dashboardUsuarioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(cadastrarLivroButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(listaDeLivrosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(sairButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -85,12 +102,6 @@ public class HomeTela extends javax.swing.JFrame {
     private void sairButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairButtonActionPerformed
         this.dispose();
     }//GEN-LAST:event_sairButtonActionPerformed
-
-    private void cadastrarUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarUsuarioButtonActionPerformed
-        var cut = new CadastroUsuarioTela(logado);
-        cut.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_cadastrarUsuarioButtonActionPerformed
 
     private void cadastrarLivroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarLivroButtonActionPerformed
         var clt = new CadastroLivroTela(logado);
@@ -121,31 +132,27 @@ public class HomeTela extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HomeTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardUsuarioTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HomeTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardUsuarioTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HomeTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardUsuarioTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HomeTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardUsuarioTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HomeTela().setVisible(true);
+                new DashboardUsuarioTela().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cadastrarLivroButton;
-    private javax.swing.JButton cadastrarUsuarioButton;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel dashboardUsuarioLabel;
     private javax.swing.JButton listaDeLivrosButton;
     private javax.swing.JButton sairButton;
     // End of variables declaration//GEN-END:variables
