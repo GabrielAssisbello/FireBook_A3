@@ -26,7 +26,10 @@ public class ListaLivros {
             // isso passa os elementos do nosso ArrayList para o DefaultListModel:
             DefaultListModel model = new DefaultListModel();
             for(Livro livro : listaDeLivros){
-                model.addElement(livro.getTitulo());
+                model.addElement("Titulo: " + livro.getTitulo());
+                model.addElement("Nota: " + livro.getNota());
+                model.addElement("Avaliações: " + livro.getNumAvaliacoes());
+                model.addElement("-----");
             }
 
             // isso passa os elementos do nosso DefaultListModel para o jList:

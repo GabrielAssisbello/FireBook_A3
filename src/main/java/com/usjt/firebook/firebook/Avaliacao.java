@@ -2,7 +2,8 @@ package com.usjt.firebook.firebook;
 
 public class Avaliacao {
     
-    int idAvaliacao, nota, idUsuario, idLivro;
+    int idAvaliacao, idUsuario, idLivro;
+    double nota;
 
     public int getIdAvaliacao() {
         return idAvaliacao;
@@ -12,11 +13,11 @@ public class Avaliacao {
         this.idAvaliacao = idAvaliacao;
     }
 
-    public int getNota() {
+    public double getNota() {
         return nota;
     }
 
-    public void setNota(int nota) {
+    public void setNota(double nota) {
         this.nota = nota;
     }
 

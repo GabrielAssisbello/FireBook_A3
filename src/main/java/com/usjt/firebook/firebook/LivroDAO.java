@@ -73,7 +73,8 @@ public class LivroDAO {
             
             while (rs.next()){
                 
-                notasSomadas = notasSomadas + rs.getDouble("nota");
+                notasSomadas += rs.getDouble("nota");
+                System.out.print(rs.getDouble("nota"));
                 numAvaliacoes++;
                 
             }

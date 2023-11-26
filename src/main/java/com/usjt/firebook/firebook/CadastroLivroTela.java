@@ -135,14 +135,17 @@ public class CadastroLivroTela extends javax.swing.JFrame {
         try {
             LivroDAO.cadastrar(livro);
             LivroDAO.receberDados(livro);
+            
             Avaliacao avaliacao = new Avaliacao();
-            avaliacao.setNota(Integer.parseInt(notaTextField.getText()));
+            avaliacao.setNota(Double.parseDouble(notaTextField.getText()));
             avaliacao.setIdLivro(livro.getIdLivro());
             avaliacao.setIdUsuario(logado.getIdUsuario());
+            AvaliacaoDAO.cadastrar(avaliacao);
             
             System.out.println("Livro cadastrado com sucesso!");
 
             JOptionPane.showMessageDialog(null, "Livro cadastrado com sucesso!");
+            
             var ht = new HomeTela(logado);
             ht.setVisible(true);
             this.dispose();

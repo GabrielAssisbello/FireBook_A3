@@ -9,7 +9,7 @@ public class AvaliacaoDAO {
         String sql = "INSERT INTO tb_avaliacao(nota, id_usuario, id_livro) VALUES (?, ?, ?)";
         var conexao = ConnectionFactory.conectar(LeitorDeProperties.ler());
         PreparedStatement ps = conexao.prepareStatement(sql);
-        ps.setInt(1, a.getNota());
+        ps.setDouble(1, a.getNota());
         ps.setInt(2, a.getIdUsuario());
         ps.setInt(3, a.getIdLivro());
         ps.execute();
